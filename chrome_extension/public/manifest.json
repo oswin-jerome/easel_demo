@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Easelextension",
+  "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "version": "0.1.0",
+  "description": "My Chrome Extension",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["contextMenus", "activeTab", "scripting", "notifications", "storage", "tabs"],
+  "commands": {
+    "capture_area": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+0",
+        "mac": "Command+Shift+0"
+      },
+      "description": "Capture area of the screen"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "icons/icon.png"
+  }
+}
