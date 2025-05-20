@@ -17,7 +17,7 @@ export const createBoardAction = async (formData: FormData) => {
 
 export const getMyBoards = async () => {
   const supabase = await createClient();
-  const { data, error } = await supabase.from("boards").select("id,title").order("created_at", { ascending: false });
+  const { data, error } = await supabase.from("boards").select("id,title,owner_id,collaborators_emails").order("created_at", { ascending: false });
   if (error) {
     console.error(error);
     return null;

@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { toast } from "sonner";
 
-const BoardCard = ({ board }: { board: Board }) => {
+const BoardCard = ({ board }: { board: Pick<Board, "id" | "title" | "owner_id" | "collaborators_emails"> }) => {
   const router = useRouter();
   const user = useSupabaseUser();
   const handleNameChange = useCallback(
